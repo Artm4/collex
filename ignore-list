@@ -1,0 +1,13 @@
+.tern-project
+.classpath
+.gitignore
+.mvn
+.project
+.settings
+.idea
+.expo
+.vscode
+target
+node_modules
+*.iml
+package-lock.json
