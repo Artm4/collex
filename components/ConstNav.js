@@ -8,10 +8,17 @@ export class ConstNav
     */ 
     Home = "Home";
 
-
-    static 
+    static
     /**
-    * @type {String[]}
-    */ 
-    NoStore = [ConstNav.Home];
+     * @type {String}
+     */
+    ReportComplete = "ReportComplete";
+
+    static
+    /**
+     * @type {String}
+     */
+    ReportComplete = "ReportComplete";
+
+
 }
