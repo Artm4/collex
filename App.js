@@ -12,15 +12,15 @@ import {Home} from "./components/Home";
 import {ReportComplete} from "./components/ReportComplete";
 import {ReportTrolley} from "./components/ReportTrolley";
 import GeoLocationComp from "./components/GeoLocationComp";
+import {ReportError} from "./components/ReportError";
+
 
 const MainNavigator = createStackNavigator({
     //GeoLocationComp: {screen: GeoLocationComp},
+    //ReportError: {screen: ReportError},
     ReportTrolley: {screen: ReportTrolley},
     Home: {screen: Home},
-
-
     ReportComplete: {screen: ReportComplete},
-
 });
 
 

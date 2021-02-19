@@ -33,8 +33,7 @@ export class ReportComplete extends MobileComponent
         /**
          * @type {boolean}
          */
-        render: false,
-        error: true
+        render: false
     };
 
 
@@ -68,12 +67,7 @@ export class ReportComplete extends MobileComponent
                 </View>
 
                 <View style={{flex: 4}}>
-                    {
-                        this.state.error ? (
-                                <Image source={errorImg} />
-                        ) :
-                            <Image source={successImg} />
-                    }
+                    <Image source={successImg} />
                 </View>
 
                 {

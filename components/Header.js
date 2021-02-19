@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import backImg from '../assets/img/back-ic.png';
 import {BackHandler, TouchableOpacity, Image, View, Text} from "react-native";
 import styles from 'assets/styles';
 
@@ -40,12 +39,10 @@ export class Header extends MobileComponent {
         return ({ navigation }) => {
             return {
                 headerTitle:  <View style={{flexDirection:'row', flexWrap:'wrap'}}>
-                    <TouchableOpacity
-                        onPress={this.handleBackButtonClick}
-                    >
-                        {/*<Icons name={'arrow-back'} size={30} color='#fff' style={{marginLeft: '3%'}}/>*/}
-                        <Image source={backImg} style={styles.backBtn} />
-                    </TouchableOpacity>
+                    {/*<TouchableOpacity>*/}
+                    {/*    /!*<Icons name={'arrow-back'} size={30} color='#fff' style={{marginLeft: '3%'}}/>*!/*/}
+
+                    {/*</TouchableOpacity>*/}
                 </View>,
 
                 headerRight:  <Header navigation={navigation} />

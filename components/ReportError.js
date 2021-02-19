@@ -13,7 +13,7 @@ import {MobileComponent} from "./MobileComponent";
 import {Header} from "./Header"
 
 
-export class ReportComplete extends MobileComponent
+export class ReportError extends MobileComponent
 {
 
     /**
@@ -68,12 +68,7 @@ export class ReportComplete extends MobileComponent
                 </View>
 
                 <View style={{flex: 4}}>
-                    {
-                        this.state.error ? (
-                                <Image source={errorImg} />
-                        ) :
-                            <Image source={successImg} />
-                    }
+                    <Image source={errorImg} />
                 </View>
 
                 {
