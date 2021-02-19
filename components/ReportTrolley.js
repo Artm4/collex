@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, Picker, TouchableOpacity} from 'react-native';
+import {AppState,ScrollView, Picker, TouchableOpacity} from 'react-native';
 import {Image, Text, View} from "react-native";
 
 import styles from 'assets/styles'
@@ -38,7 +38,8 @@ export class ReportTrolley extends MobileComponent
         /**
          * @type {boolean}
          */
-        render: false
+        render: false,
+        appState: AppState.currentState
     };
 
     static StateNormal=0;
@@ -54,7 +55,6 @@ export class ReportTrolley extends MobileComponent
      */
     navigationOptions = this.renderHeader();
 
-
     sendReport()
     {
         this.props.navigation.navigate(ConstNav.ReportComplete,null);
@@ -69,7 +69,6 @@ export class ReportTrolley extends MobileComponent
         return(
             <View>
                 <View style={styles.container}>
-
                     <View style={{marginTop: 20, marginBottom: 20, flex: 3}}>
                         <Image source={logo} />
                     </View>
@@ -87,7 +86,6 @@ export class ReportTrolley extends MobileComponent
                 <View style={styles.fixedFooter}>
                     <Image source={edataLogo} style={{marginRight: 30}} />
                     <Image source={tmsLogo} />
-
                 </View>
             </View>
 
@@ -154,8 +152,9 @@ export class ReportTrolley extends MobileComponent
 
     componentDidMount()
     {
+        AppState.addEventListener('change', this._handleAppStateChange);
         Location.watchPositionAsync({accuracy:Location.Accuracy.High}, (location)=>{
-            console.log(location)
+            //console.log(location)
         }).catch((err)=>{console.log("Something is wrong")});
         this.willFocusSubscription = this.props.navigation.addListener(
             'willFocus',
@@ -181,6 +180,15 @@ export class ReportTrolley extends MobileComponent
     componentWillUnmount()
     {
         this.willFocusSubscription.remove();
+        AppState.removeEventListener('change', this._handleAppStateChange);
+    }
+
+    _handleAppStateChange = (nextAppState) => {
+        if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
+            console.log('App has come to the foreground!')
+        }
+        this.setState({appState: nextAppState});
+        console.log("some"+nextAppState)
     }
 
     render()
