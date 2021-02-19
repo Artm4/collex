@@ -59,6 +59,8 @@ export class ReportError extends MobileComponent
     }
 
     render(){
+        let message=typeof this.props.navigation.getParam('message') != "undefined" ? this.props.navigation.getParam('message') : "Unknown";
+        let error="Error: "+message;
         return(
 
             <View style={styles.container}>
@@ -71,24 +73,14 @@ export class ReportError extends MobileComponent
                     <Image source={errorImg} />
                 </View>
 
-                {
-                    this.state.error ? (
-                        <View style={{flex: 4}}>
-                            <Text style={styles.instructions}>
-                                Sorry.
-                            </Text>
-                        </View>
-                    ) :
-                        <View style={{flex: 4}}>
-                            <Text style={styles.instructions}>
-                                Thank you for your help in reporting the location of abandoned ASDA Trolleys.
-                            </Text>
-                            <Text style={styles.descriptions}>
-                                A trained collector will ensure it is collected,
-                                repaired if necessary and returned to store.
-                            </Text>
-                        </View>
-                }
+                <View style={{flex: 4}}>
+                    <Text style={styles.instructions}>
+                        Sorry we couldn't fulfill you request.
+                    </Text>
+                    <Text style={styles.instructions}>
+                        {error}
+                    </Text>
+                </View>
 
                 <View style={styles.fixedFooter}>
                     <Image source={edataLogo} style={{marginRight: 30}} />
