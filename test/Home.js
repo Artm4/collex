@@ -5,11 +5,11 @@ import {Image, Text, View} from "react-native";
 import styles from 'assets/styles'
 import logo from "../assets/img/asda-logo.png";
 import locationImg from "../assets/img/location-off.png";
-import edataLogo from  "../assets/img/edata-logo.png";
-import tmsLogo from  "../assets/img/tms-logo.png";
+import edataLogo from "../assets/img/edata-logo.png";
+import tmsLogo from "../assets/img/tms-logo.png";
 
-import {MobileComponent} from "./MobileComponent";
-import {Header} from "./Header"
+import {MobileComponent} from "../components/MobileComponent";
+import {Header} from "../components/Header"
 
 
 export class Home extends MobileComponent

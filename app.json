@@ -7,7 +7,7 @@
     "privacy": "unlisted",
     "sdkVersion": "39.0.0",
     "version": "1.0.0",
-    "icon": "./assets/img/app-ic-72x72.png",
+    "icon": "./assets/img/asda-icon.png",
     "entryPoint": "node_modules/expo/AppEntry.js",
     "platforms": [
       "android"

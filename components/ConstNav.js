@@ -18,7 +18,7 @@ export class ConstNav
     /**
      * @type {String}
      */
-    ReportComplete = "ReportComplete";
+    ReportError = "ReportError";
 
 
 }
