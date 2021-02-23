@@ -166,15 +166,15 @@ export class ReportTrolley extends MobileComponent
         return(
             <View>
                 <View style={styles.container}>
-                    <View style={{marginTop: 20, marginBottom: 20, flex: 3}}>
+                    <View style={{marginTop: 20, marginBottom: 20, flex: 2}}>
                         <Image source={logo} />
                     </View>
 
-                    <View style={{flex: 4}}>
+                    <View style={{flex: 3}}>
                         <Image source={locationImg} />
                     </View>
 
-                    <View style={{flex: 4}}>
+                    <View style={{flex: 2}}>
                         <Text style={styles.instructions}>Oops, the location service is off</Text>
                         <Text style={styles.descriptions}>Go to Settings > Privacy to turn the location service on</Text>
                     </View>
@@ -182,7 +182,7 @@ export class ReportTrolley extends MobileComponent
                         <TouchableOpacity
                             onPress={() => this.checkGeoAvailable()}
                             style={styles.sendBtn}>
-                            <Image style={{margin: 10}} source={sendImg} />
+                            <Image style={{margin: 4}} source={sendImg} />
                             <Text style={{ fontSize: 20}}>Try again</Text>
                         </TouchableOpacity>
                     </View>
@@ -214,6 +214,11 @@ export class ReportTrolley extends MobileComponent
                             colorMax={"#f04048"}
                             colorMin={"#40c5f4"}
                             value={this.state.number}
+                            fontSize={50}
+                            textColor={"#0073b1"}
+                            arrows
+                            width={250}
+                            skin={"square"}
                             onChange={(num) => {
                                 this.setState({number:num});
                             }}
