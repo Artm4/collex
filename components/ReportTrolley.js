@@ -70,7 +70,7 @@ export class ReportTrolley extends MobileComponent
         params["client_tag"]="asda";
         params["qty"]=this.state.number;
         params["device_id"]=Constants.deviceId;
-        console.log(params)
+        //console.log(params)
 
         let url=config.URL;
         let requestConfig={
@@ -83,7 +83,7 @@ export class ReportTrolley extends MobileComponent
         axios.post(url,params,requestConfig)
             .then( (response) => {
                 // handle success
-                console.log(response);
+                //console.log(response);
                 this.setState({number:1});
                 this.props.navigation.navigate(ConstNav.ReportComplete,null);
             })
@@ -258,7 +258,6 @@ export class ReportTrolley extends MobileComponent
     {
         GeoLocation.hasServicesEnabled().then(
             (enabled)=>{
-                console.log("Enabled"+enabled);
                 this.stateView=enabled?ReportTrolley.StateNormal:ReportTrolley.StateServiceOff;
                 this.stateKey("render",!this.state.render);
 
