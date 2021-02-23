@@ -17,6 +17,7 @@ import {GeoLocation} from "/lib/common";
 import {ConstNav} from "./ConstNav";
 const axios = require('axios');
 import Constants from 'expo-constants';
+import config from "/project-config";
 
 
 export class ReportTrolley extends MobileComponent
@@ -71,7 +72,7 @@ export class ReportTrolley extends MobileComponent
         params["device_id"]=Constants.deviceId;
         console.log(params)
 
-        let url="http://collex.edatachase.co.uk/api/v1/guest/signal";
+        let url=config.URL;
         let requestConfig={
             withCredentials: false,
             headers:{

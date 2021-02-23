@@ -1,8 +1,6 @@
 let config=
 {
-    URL: "https://trolleycom.com/api/ccbus",
-    //URL: "http://192.168.2.4:8090/api/ccbus",
-    //URL: "http://192.168.2.23:8080/api/ccbus",
-    platform: "mobile"
+    //URL: "http://collex.edatachase.co.uk/api/v1/guest/signal",
+    URL: "http://collextrolley.com/api/v1/guest/signal"
 }
 export default config;
